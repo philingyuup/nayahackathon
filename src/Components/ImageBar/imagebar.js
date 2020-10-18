@@ -11,7 +11,7 @@ export const ImageBar = ({ imageRef }) => {
 
     return (
         <>
-            <div style={{ width: '100vw', height: '200px' }}>
+            <div style={{ width: '100vw', height: 'auto' }}>
                 { imageSrc.map((src, index) =>
                 <img
                     key={index}
@@ -21,7 +21,7 @@ export const ImageBar = ({ imageRef }) => {
                     height='80'
                     draggable="true"
                     onDragStart={e => {
-                        imageRef.current = e.target.src;
+                        imageRef.current = e.target
                     }}
                 />
                 ) }

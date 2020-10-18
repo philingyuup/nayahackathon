@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Text } from 'react-konva'
 
-export const TextImage = () => {
+export const TextImage = ({ text }) => {
     const [isDragging, setIsDragging] = useState(false)
     const [coordinates, setCoordinates] = useState({})
     
@@ -12,17 +12,22 @@ export const TextImage = () => {
 
     const dragEndHandler = (e) => {
         setIsDragging(false)
-        setCoordinates({x : e.target.x(), y: e.target.y()})
     }
 
     return (
         <>
             <Text 
-                text="Draggable Text"
-                x={coordinates.x}
-                y={coordinates.y}
+                text={text.text}
+                x={text.x}
+                y={text.y}
+                fontSize={isDragging ? 31 : 30 }
                 draggable
-                fill={this.state.isDragging ? 'green' : 'black'}
+                shadowEnabled='true'
+                shadowColor='black'
+                shadowBlur={8}
+                shadowOpacity={0.6}
+                shadowOffsetX={isDragging ? 4 : 3}
+                shadowOffsetY={isDragging ? 4 : 3}
                 onDragStart={dragStartHandler}
                 onDragEnd={dragEndHandler}
             />

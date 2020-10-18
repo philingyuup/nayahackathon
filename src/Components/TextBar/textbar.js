@@ -23,17 +23,16 @@ export const TextBar = ({ textRef }) => {
         <>
             <div style={{ width: '100vw', height: '200px' }}>
                 {textSrc.map((src, index) =>
-                    <div
+                    <span
                         key={index}
                         id={`text-${index}`}
-                        
                         draggable="true"
                         onDragStart={e => {
-                            textRef.current = e.target.src;
+                            textRef.current= e.target
                         }}
                     >
-                        '#'{src}
-                    </div>
+                        #{src}
+                    </span>
                 )}
             </div>
         </>

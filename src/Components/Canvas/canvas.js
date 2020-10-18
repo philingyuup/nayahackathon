@@ -3,35 +3,35 @@ import { Stage, Layer} from 'react-konva';
 import { URLImage } from '../URLImage/urlimage'
 import { ImageBar } from '../ImageBar/imagebar'
 import { TextBar } from '../TextBar/textbar'
+import { TextImage } from '../Text/textimage'
 
 export const Canvas = () => {
 
-    const imageRef = useRef();
-    const textRef = useRef();
+    const dragRef = useRef();
     const stageRef = useRef();
-    const [images, setImages] = useState([]);
+    const [nodes, setNodes] = useState([]);
 
     const onDropHandler = (e) => {
         // register event position
         stageRef.current.setPointersPositions(e);
         // add image
-        setImages(prevImages =>
+        setNodes(prevNodes =>
             [
-                ...prevImages,
+                ...prevNodes,
                 {
                     ...stageRef.current.getPointerPosition(),
-                    src: imageRef.current
+                    src: dragRef.current.src,
+                    text: dragRef.current.innerText
                 }
             ])
+        console.log(nodes)
     }
-
 
     return (
         <div>
             Try to drag an image into the stage:
-            <br />
-            <ImageBar imageRef={imageRef}/>
-            <TextBar textRef={textRef} />
+            <ImageBar imageRef={dragRef}/>
+            <TextBar textRef={dragRef} />
             <div
                 onDrop={onDropHandler}
                 onDragOver={e => e.preventDefault()}
@@ -43,8 +43,10 @@ export const Canvas = () => {
                     ref={stageRef}
                 >
                     <Layer>
-                        {images.map((image, index) => {
-                            return <URLImage key={index}  image={image} />;
+                        {nodes.map((node, index) => {
+                            return node.src 
+                            ? <URLImage key={index} image={node} />
+                            : <TextImage key={index} text={node} />
                         })}
                     </Layer>
                 </Stage>
