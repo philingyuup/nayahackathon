@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nayahackathon/static/css/main.d41f939e.chunk.css",
+    "main.js": "/nayahackathon/static/js/main.bb03c3e8.chunk.js",
+    "main.js.map": "/nayahackathon/static/js/main.bb03c3e8.chunk.js.map",
+    "runtime-main.js": "/nayahackathon/static/js/runtime-main.b799333a.js",
+    "runtime-main.js.map": "/nayahackathon/static/js/runtime-main.b799333a.js.map",
+    "static/js/2.29654acc.chunk.js": "/nayahackathon/static/js/2.29654acc.chunk.js",
+    "static/js/2.29654acc.chunk.js.map": "/nayahackathon/static/js/2.29654acc.chunk.js.map",
+    "index.html": "/nayahackathon/index.html",
+    "precache-manifest.6c66fc441de1237831b53644ca38ef46.js": "/nayahackathon/precache-manifest.6c66fc441de1237831b53644ca38ef46.js",
+    "service-worker.js": "/nayahackathon/service-worker.js",
+    "static/css/main.d41f939e.chunk.css.map": "/nayahackathon/static/css/main.d41f939e.chunk.css.map",
+    "static/js/2.29654acc.chunk.js.LICENSE.txt": "/nayahackathon/static/js/2.29654acc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b799333a.js",
+    "static/js/2.29654acc.chunk.js",
+    "static/css/main.d41f939e.chunk.css",
+    "static/js/main.bb03c3e8.chunk.js"
+  ]
+}
