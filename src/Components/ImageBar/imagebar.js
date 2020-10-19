@@ -15,8 +15,9 @@ export const ImageBar = ({ imageRef }) => {
                 { imageSrc.map((src, index) =>
                 <img
                     key={index}
-                    id={`image-${index}`}
+                    id={`image${index}`}
                     alt="pic"
+                    style={{ marginLeft: '10px'}}
                     src={src}
                     height='80'
                     draggable="true"
