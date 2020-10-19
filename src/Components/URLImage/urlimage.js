@@ -9,7 +9,6 @@ export const URLImage = ({ image, isSelected, id, onSelect, itemRef, transformRe
     const [height, setHeight] = useState(100)
     const [isDragging, setIsDragging] = useState(false)
 
-    console.log(img)
     // const determineWidth = () => {
     //     return img ? img.width * (150 / img.height) : 0
     // }
@@ -27,7 +26,6 @@ export const URLImage = ({ image, isSelected, id, onSelect, itemRef, transformRe
 
 
     const dragStartHandler = (e) => {
-        console.log(e.target.height())
         setIsDragging(!isDragging)
     }
 
@@ -35,13 +33,15 @@ export const URLImage = ({ image, isSelected, id, onSelect, itemRef, transformRe
         setIsDragging(false)
     }
 
+    //attached transformer to the last clicked itemRef
     const onClickHandler = (e) => {
         transformRef.current.nodes([itemRef.current])
         transformRef.current.getLayer().batchDraw()
     }
 
+    //constraints for image sizes
     const boundBoxFunctionHandler = (oldImage, newImage) => {
-        if (Math.abs(newImage.height) > 240 || Math.abs(newImage.height) < 120) {
+        if (Math.abs(newImage.height) > 180 || Math.abs(newImage.height) < 100) {
             return oldImage
         }
         setHeight(newImage.height)

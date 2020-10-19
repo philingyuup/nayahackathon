@@ -17,17 +17,42 @@ export const TextBar = ({ textRef }) => {
         'Chic',
         'Sleek',
         'Elegant',
-        'Modern'
+        'Modern',
+        'Bohemian',
+        'Furturistic',
+        'Minimalistic',
+        'Brutalist',
+        'Cute',
+        'Rustic',
+        'Classic',
+        'Cubic',
+        'Angular',
+        'Circular',
+        'Edgy',
+        'Organic',
+        'Light',
+        'Rectilinear',
+        'Round',
+        'Slim',
+        'Modular',
+        'Geometric',
+        'Curvilinear',
+        'African',
+        'Japanese',
+        'Scandinavian',
+        'Italian',
+        'Spanish',
+        'Arabic'
     ]
 
     return (
         <>
-            <div style={{ width: '100vw', height: 'auto', marginTop: '20px'}}>
+            <div style={{ width: '95vw', height: 'auto', marginTop: '20px', overflowX: 'scroll', marginLeft: '8px'}}>
                 {textSrc.map((src, index) =>
                     <span
                         key={index}
                         id={`text${index}`}
-                        style={{marginLeft: '5px'}}
+                        style={{marginLeft: '8px', }}
                         draggable="true"
                         onDragStart={e => {
                             textRef.current= e.target

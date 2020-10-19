@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { Text } from 'react-konva'
 
-export const TextImage = ({ text }) => {
-    const [isDragging, setIsDragging] = useState(false)
-    const [coordinates, setCoordinates] = useState({})
-    
+export const TextImage = ({ text, id }) => {
+    const [isDragging, setIsDragging] = useState(false)    
 
     const dragStartHandler = (e) => {
         setIsDragging(!isDragging)
@@ -18,6 +16,7 @@ export const TextImage = ({ text }) => {
         <>
             <Text 
                 text={text.text}
+                id={id}
                 x={text.x}
                 y={text.y}
                 fontSize={isDragging ? 31 : 30 }
