@@ -8,5 +8,3 @@ Sample 1:
 6: {id: "text16", weight: 1}
 7: {id: "text1", weight: 1}
 8: {id: "text15", weight: 1}
-
-Sample 2: 
